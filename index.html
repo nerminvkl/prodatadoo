@@ -1,103 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProData d.o.o. Velika Kladuša</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ffffff, #ffffff);
-            color: #222;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProData d.o.o. Velika Kladuša</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ffffff, #ffffff); 
+        color: #222;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        flex-direction: column;
+        padding: 20px;
+        box-sizing: border-box;
+    }
 
-        .container {
-            max-width: 400px;
-            padding: 20px;
-        }
+    .container {
+        max-width: 400px;
+    }
 
-        .logo {
-            width: 120px;
-            height: 120px;
-            object-fit: contain;
-            margin-bottom: 20px;
-        }
+    .logo {
+        text-align: center;
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        margin-bottom: 20px;
+    }
 
+    h1 {
+        margin: 10px 0;
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    
+    @media (max-width: 480px) {
         h1 {
-            margin: 10px 0;
-            font-size: 28px;
+            white-space: pre-line;
         }
+        h1 span {
+            display: block;
+        }
+    }
 
-        .slogan {
-            font-size: 16px;
-            opacity: 0.9;
-            margin-bottom: 25px;
-        }
+    .slogan {
+        font-size: 16px;
+        opacity: 0.9;
+        margin-bottom: 25px;
+    }
 
-        .contact {
-            font-size: 14px;
-            line-height: 1.8;
-        }
+    .contact {
+        font-size: 14px;
+        line-height: 1.8;
+    }
 
-        .contact a {
-            color: #242424;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255,255,255,0.5);
-        }
+    .contact a {
+        color: #242424;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+    }
 
-        .contact a:hover {
-            opacity: 0.8;
-        }
-        footer {
-            position: absolute;
-            bottom: 15px;
-            width: 100%;
-            text-align: center;
-            font-size: 12px;
-            color: #666;
-        }
-        footer a {
-            color: #444;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(0,0,0,0.3);
-        }
+    .contact a:hover {
+        opacity: 0.8;
+    }
 
-        footer a:hover {
-            opacity: 0.7;
-        }
-    </style>
+    footer {
+        margin-top: 30px;
+        font-size: 12px;
+        color: #666;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+
+    footer span.hosting {
+        display: block;
+        margin-top: 5px;
+    }
+
+    footer a {
+        color: #444;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+    }
+
+    footer a:hover {
+        opacity: 0.7;
+    }
+</style>
 </head>
 <body>
 
-    <div class="container">
-        
-        <img src="prodatalogo.png" alt="Prodata Logo" class="logo">
+<div class="container">
 
-        
-        <h1>ProData d.o.o. Velika Kladuša</h1>
+    <img src="prodatalogo.png" alt="Prodata Logo" class="logo">
 
-       
-        <div class="slogan">Ulica Mahmuta Zulića 11</div>
-
-        
-        <div class="contact">
-            📞 <a href="tel:+123456789">+387 37 770 079</a><br>
-            📧 <a href="mailto:info@yourcompany.com">prodatadoo@gmail.com</a>
-        </div>
-    </div>
-    <footer>
-        © <span id="year"></span> ProData d.o.o. Velika Kladuša. All rights reserved. 
-        Hosting+Code: <a href="https://mnmlogic.com" target="_blank">MNM Logic</a>
-    </footer>
     
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <h1>ProData d.o.o.<span>Velika Kladuša</span></h1>
+
+    <div class="slogan">Ulica Mahmuta Zulića 11</div>
+
+    <div class="contact">
+        📞 <a href="tel:+38737770079">+387 37 770 079</a><br>
+        📧 <a href="mailto:prodatadoo@gmail.com">prodatadoo@gmail.com</a>
+    </div>
+</div>
+
+<footer>
+    © <span id="year"></span> ProData d.o.o. Velika Kladuša. All rights reserved. 
+    <span class="hosting">Hosting+Code: <a href="https://mnmlogic.com" target="_blank">MNM Logic</a></span>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
