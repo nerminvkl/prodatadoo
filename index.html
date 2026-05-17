@@ -12,14 +12,15 @@
 :root {
   --ink:    #0C0C0C;
   --ink2:   #161616;
-  --ink3:   #202020;
-  --silver: #C0C0C0;
-  --silver2:#E4E4E4;
-  --amber:  #E8A020;
-  --amber2: #FFC040;
-  --dimmed: #686868;
-  --border: rgba(200,200,200,0.10);
-  --border2:rgba(200,200,200,0.18);
+  --ink3:   #212121;
+  --silver: #909090;
+  --silver2:#D8D8D8;
+  --amber:  #C8C8C8;
+  --amber2: #E8E8E8;
+  --dimmed: #585858;
+  --border: rgba(200,200,200,0.09);
+  --border2:rgba(200,200,200,0.16);
+  --accent: #FFFFFF;
 }
 
 html, body { height: 100%; }
@@ -37,7 +38,7 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 65% 55% at 50% 35%, rgba(232,160,32,0.07) 0%, transparent 65%),
+    radial-gradient(ellipse 65% 55% at 50% 35%, rgba(255,255,255,0.03) 0%, transparent 65%),
     radial-gradient(ellipse 80% 50% at 5%  0%,  rgba(255,255,255,0.02) 0%, transparent 55%);
   pointer-events: none;
   z-index: 0;
@@ -61,7 +62,7 @@ body::after {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent 0%, var(--amber) 40%, var(--amber2) 60%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, #888 30%, #fff 50%, #888 70%, transparent 100%);
   z-index: 100;
 }
 
@@ -104,32 +105,32 @@ body::after {
   position: absolute;
   top: 0; left: 15%; right: 15%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--amber), transparent);
-  opacity: 0.5;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  opacity: 0.6;
 }
 
 .logo-ring {
-  width: 100px; height: 100px;
+  width: 120px; height: 120px;
   border-radius: 50%;
   border: 1px solid var(--border2);
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 1.6rem;
-  background: var(--ink3);
+  background: #fff;
   position: relative;
-  box-shadow: 0 0 0 5px rgba(232,160,32,0.04), 0 0 30px rgba(0,0,0,0.5);
+  box-shadow: 0 0 0 5px rgba(255,255,255,0.04), 0 0 30px rgba(0,0,0,0.5);
 }
 .logo-ring::after {
   content: '';
   position: absolute;
   inset: -5px;
   border-radius: 50%;
-  border: 1px dashed rgba(200,200,200,0.09);
+  border: 1px dashed rgba(200,200,200,0.12);
 }
 .logo-ring img {
-  width: 72px; height: 72px;
+  width: 90px; height: 90px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: 0.85;
+  filter: grayscale(100%);
+  opacity: 0.95;
 }
 
 .badge {
@@ -140,17 +141,17 @@ body::after {
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--amber);
-  border: 1px solid rgba(232,160,32,0.28);
+  color: var(--silver2);
+  border: 1px solid rgba(200,200,200,0.2);
   border-radius: 20px;
   padding: 4px 13px;
   margin-bottom: 1.1rem;
-  background: rgba(232,160,32,0.06);
+  background: rgba(255,255,255,0.05);
 }
 .badge-dot {
   width: 5px; height: 5px;
   border-radius: 50%;
-  background: var(--amber);
+  background: #fff;
   animation: blink 2.2s ease-in-out infinite;
 }
 @keyframes blink {
@@ -166,7 +167,7 @@ body::after {
   color: var(--silver2);
   margin-bottom: 0.2rem;
 }
-.company-name span { color: var(--amber); }
+.company-name span { color: #ffffff; }
 
 .sub {
   font-size: 0.72rem;
@@ -199,7 +200,7 @@ body::after {
 }
 .pill svg {
   width: 12px; height: 12px;
-  stroke: var(--amber);
+  stroke: var(--silver2);
   fill: none;
   stroke-width: 1.8;
   stroke-linecap: round;
@@ -207,10 +208,10 @@ body::after {
   flex-shrink: 0;
 }
 
-/* ── AMBER STRIP ── */
+/* ── STRIP ── */
 .strip {
-  background: var(--amber);
-  height: 3px;
+  background: linear-gradient(90deg, #222, #555, #222);
+  height: 2px;
 }
 
 /* ── INFO ── */
@@ -235,7 +236,7 @@ body::after {
 }
 .addr svg {
   width: 14px; height: 14px;
-  stroke: var(--amber);
+  stroke: var(--silver);
   fill: none;
   stroke-width: 1.8;
   stroke-linecap: round;
@@ -262,12 +263,12 @@ body::after {
   position: absolute;
   left: 0; top: 0; bottom: 0;
   width: 2px;
-  background: var(--amber);
+  background: #fff;
   transform: scaleY(0);
   transform-origin: center;
   transition: transform 0.2s;
 }
-.contact-btn:hover { background: rgba(232,160,32,0.05); padding-left: 2.2rem; }
+.contact-btn:hover { background: rgba(255,255,255,0.04); padding-left: 2.2rem; }
 .contact-btn:hover::before { transform: scaleY(1); }
 
 .icon-box {
@@ -280,8 +281,8 @@ body::after {
   transition: border-color 0.2s, background 0.2s;
 }
 .contact-btn:hover .icon-box {
-  border-color: rgba(232,160,32,0.35);
-  background: rgba(232,160,32,0.07);
+  border-color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.07);
 }
 .icon-box svg {
   width: 16px; height: 16px;
@@ -292,7 +293,7 @@ body::after {
   stroke-linejoin: round;
   transition: stroke 0.2s;
 }
-.contact-btn:hover .icon-box svg { stroke: var(--amber); }
+.contact-btn:hover .icon-box svg { stroke: #fff; }
 
 .btn-text { flex: 1; }
 .btn-label {
@@ -315,7 +316,7 @@ body::after {
   transition: stroke 0.2s, transform 0.2s;
   flex-shrink: 0;
 }
-.contact-btn:hover .arr { stroke: var(--amber); transform: translateX(3px); }
+.contact-btn:hover .arr { stroke: #fff; transform: translateX(3px); }
 
 /* ── FOOTER ── */
 footer {
@@ -325,8 +326,8 @@ footer {
   text-align: center;
   animation: fadeUp 0.85s 0.25s cubic-bezier(0.16,1,0.3,1) both;
 }
-footer a { color: rgba(232,160,32,0.4); text-decoration: none; transition: color 0.2s; }
-footer a:hover { color: var(--amber); }
+footer a { color: rgba(200,200,200,0.35); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: #fff; }
 
 @media (max-width: 480px) {
   .hero { padding: 2rem 1.4rem 2rem; }
@@ -344,8 +345,8 @@ footer a:hover { color: var(--amber); }
 
     <div class="hero">
       <div class="logo-ring">
-        <img src="https://www.prodata.ba/prodatalogo.png" alt="ProData logo"
-          onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:Bebas Neue,sans-serif;font-size:2.2rem;color:#E8A020;letter-spacing:.05em\'>PD</span>'">
+        <img src="https://prodata.ba/prodatalogo.png" alt="ProData logo"
+          onerror="this.style.display='none';this.parentElement.innerHTML+='<span style=\'font-family:Bebas Neue,sans-serif;font-size:2.2rem;color:#ccc;letter-spacing:.05em\'>PD</span>'">
       </div>
 
       <div class="badge"><div class="badge-dot"></div>Ovlašteni distributer i serviser</div>
